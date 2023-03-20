@@ -21,6 +21,18 @@ namespace TicTacToe
 
             SetField();
             Console.ReadKey();
+
+
+            do
+            {
+                if (player == 2)
+                    player = 1;
+                else if (player == 1)
+                    player = 2;
+
+
+            } while (true);
+
         }
 
         public static void SetField()
