@@ -19,10 +19,11 @@ namespace TicTacToe
             int input = 0;
             bool inputCorrect = true;
 
-            SetField();
+            
             // Run code as long as the program funs
             do
             {
+                
                 if (player == 2)
                 {
                     player = 1;
@@ -33,12 +34,49 @@ namespace TicTacToe
                     player = 2;
                     EnterXorO(player, input);
                 }
+
+                SetField();
+
+
                 do
                 {
                     Console.WriteLine("\nPlayer {0} : Choose your field!", player);
-                    input = Convert.ToInt32(Console.ReadLine());
+                    try
+                    {
+                        input = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch
+                    {
 
-                }while (!inputCorrect);
+                        Console.WriteLine("Please enter a number!");
+                    }
+
+                    if ((input == 1) && (playField[0, 0] == '1'))
+                        inputCorrect = true;
+                    else if ((input == 2) && (playField[0, 1] == '2'))
+                        inputCorrect = true;
+                    else if ((input == 3) && (playField[0, 2] == '3'))
+                        inputCorrect = true;
+                    else if ((input == 4) && (playField[1, 0] == '4'))
+                        inputCorrect = true;
+                    else if ((input == 5) && (playField[1, 1] == '5'))
+                        inputCorrect = true;
+                    else if ((input == 6) && (playField[2, 0] == '6'))
+                        inputCorrect = true;
+                    else if ((input == 7) && (playField[2, 1] == '7'))
+                        inputCorrect = true;
+                    else if ((input == 8) && (playField[2, 1] == '8'))
+                        inputCorrect = true;
+                    else if ((input == 9) && (playField[0, 1] == '9'))
+                        inputCorrect = true;
+                    else
+                    {
+                        Console.WriteLine("\n Incorrect input! Please use another field!");
+                        inputCorrect = false;
+                    }
+
+
+                } while (!inputCorrect);
                 
 
 
@@ -48,6 +86,7 @@ namespace TicTacToe
 
         public static void SetField()
         {
+            Console.Clear();
             Console.WriteLine("     |     |     ");
             Console.WriteLine("  {0}  |  {1}  |  {2}", playField[0, 0], playField[0, 1], playField[0, 2]);
             Console.WriteLine("_____|_____|_____");
