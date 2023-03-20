@@ -20,8 +20,6 @@ namespace TicTacToe
             bool inputCorrect = true;
 
             SetField();
-            Console.ReadKey();
-
             // Run code as long as the program funs
             do
             {
@@ -34,7 +32,13 @@ namespace TicTacToe
                 {
                     player = 2;
                     EnterXorO(player, input);
-                }               
+                }
+                do
+                {
+                    Console.WriteLine("\nPlayer {0} : Choose your field!", player);
+                    input = Convert.ToInt32(Console.ReadLine());
+
+                }while (!inputCorrect);
                 
 
 
