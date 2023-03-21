@@ -52,7 +52,7 @@ namespace TicTacToe
                         || ((playField[0, 0] == playerChar) && (playField[1, 1] == playerChar) && (playField[2, 2] == playerChar))
                         || ((playField[0, 2] == playerChar) && (playField[1, 1] == playerChar) && (playField[2, 0] == playerChar)))
                     {
-                        if(playerChar == 'X')
+                        if(playerChar == 'O')
                         {
                             Console.WriteLine("\nPlayer 2 has won!!!!!");
                         }
@@ -133,9 +133,9 @@ namespace TicTacToe
             char playerSign = ' ';
 
             if (player == 1)
-                playerSign = 'X';
-            else if (player == 2)
                 playerSign = 'O';
+            else if (player == 2)
+                playerSign = 'X';
 
             switch (input)
             {
