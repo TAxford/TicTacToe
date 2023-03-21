@@ -10,14 +10,7 @@ namespace TicTacToe
             {'1','2','3'},
             {'4','5','6'},
             {'7','8','9'},
-        };
-
-        static char[,] playFieldInital =
-        {
-            {'1','2','3'},
-            {'4','5','6'},
-            {'7','8','9'},
-        };
+        };        
 
         static int turns = 0;
 
@@ -135,6 +128,13 @@ namespace TicTacToe
 
         public static void ResetField()
         {
+            char[,] playFieldInital =
+        {
+            {'1','2','3'},
+            {'4','5','6'},
+            {'7','8','9'},
+            };
+
             playField = playFieldInital;            
             SetField();
             turns = 0;
