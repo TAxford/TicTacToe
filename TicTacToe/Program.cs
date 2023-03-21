@@ -12,6 +12,12 @@ namespace TicTacToe
             {'7','8','9'},
         };
 
+        static char[,] playFieldInital =
+        {
+            {'1','2','3'},
+            {'4','5','6'},
+            {'7','8','9'},
+        };
         //the player
         static void Main(string[] args)
         {
@@ -60,6 +66,10 @@ namespace TicTacToe
                         {
                             Console.WriteLine("\nPlayer 1 has won!!!!!");
                         }
+                        Console.WriteLine("Please press any key to reset the game!!!");
+
+                        ResetField();
+
                         break;
 
                         
@@ -113,6 +123,12 @@ namespace TicTacToe
 
             } while (true);
 
+        }
+
+        public static void ResetField()
+        {
+            playField = playFieldInital;
+            SetField();
         }
 
         public static void SetField()
