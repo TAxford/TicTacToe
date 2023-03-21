@@ -92,13 +92,13 @@ namespace TicTacToe
                         inputCorrect = true;
                     else if ((input == 5) && (playField[1, 1] == '5'))
                         inputCorrect = true;
-                    else if ((input == 6) && (playField[2, 0] == '6'))
+                    else if ((input == 6) && (playField[1, 2] == '6'))
                         inputCorrect = true;
-                    else if ((input == 7) && (playField[2, 1] == '7'))
+                    else if ((input == 7) && (playField[2, 0] == '7'))
                         inputCorrect = true;
                     else if ((input == 8) && (playField[2, 1] == '8'))
                         inputCorrect = true;
-                    else if ((input == 9) && (playField[0, 1] == '9'))
+                    else if ((input == 9) && (playField[2, 2] == '9'))
                         inputCorrect = true;
                     else
                     {
