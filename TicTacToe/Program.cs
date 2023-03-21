@@ -38,7 +38,7 @@ namespace TicTacToe
                 }
 
                 SetField();
-
+                
                 #region
                 //Check for winner
                 char[] playerChars = { 'X', 'O' };
