@@ -18,6 +18,9 @@ namespace TicTacToe
             {'4','5','6'},
             {'7','8','9'},
         };
+
+        static int turns = 0;
+
         //the player
         static void Main(string[] args)
         {
@@ -67,12 +70,17 @@ namespace TicTacToe
                             Console.WriteLine("\nPlayer 1 has won!!!!!");
                         }
                         Console.WriteLine("Please press any key to reset the game!!!");
-
+                        Console.ReadKey();
                         ResetField();
-
+                        break;                        
+                    }
+                    else if (turns == 10)
+                    {
+                        Console.WriteLine("We have a Cat Game Everyone");
+                        Console.WriteLine("Please press any key to reset the game!!!");
+                        Console.ReadKey();
+                        ResetField();
                         break;
-
-                        
                     }
                 }
                 #endregion
@@ -127,8 +135,9 @@ namespace TicTacToe
 
         public static void ResetField()
         {
-            playField = playFieldInital;
+            playField = playFieldInital;            
             SetField();
+            turns = 0;
         }
 
         public static void SetField()
@@ -142,6 +151,7 @@ namespace TicTacToe
             Console.WriteLine("     |     |     ");
             Console.WriteLine("  {0}  |  {1}  |  {2}", playField[2, 0], playField[2, 1], playField[2, 2]);
             Console.WriteLine("     |     |     ");
+            turns++;
         }
 
         public static void EnterXorO(int player, int input)
